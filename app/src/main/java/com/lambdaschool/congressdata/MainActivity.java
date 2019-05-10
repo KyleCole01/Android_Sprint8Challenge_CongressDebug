@@ -17,38 +17,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
-
-/*public class MainActivity extends LifecycleActivity  {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ListView listView = (ListView) findViewById(R.id.list);
-        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressbar);
-        progressBar.setVisibility(View.VISIBLE);
-        MainActivityViewModel model = ViewModelProviders.of(this).get(MainActivityViewModel.class);
-        model.getFruitList().observe(this, fruitlist -> {
-            // update UI
-            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                    android.R.layout.simple_list_item_1, android.R.id.text1, fruitlist);
-            // Assign adapter to ListView
-            listView.setAdapter(adapter);
-            progressBar.setVisibility(View.GONE);
-        });
-    }
-}*/
-
-
 public class MainActivity extends AppCompatActivity {
 
-    private RecyclerView               layoutList;
+    private RecyclerView layoutList;
     private RecyclerView.LayoutManager layoutManager;
-    private OverviewListAdapter        listAdapter;
+    private OverviewListAdapter listAdapter;
 
-    private Context                     context;
+    private Context context;
     private CongresspersonListViewModel viewModel;
-    private Activity                    activity;
+    private Activity activity;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,11 +51,6 @@ public class MainActivity extends AppCompatActivity {
             listAdapter = new OverviewListAdapter(overviewList);
             layoutList.setAdapter(listAdapter);
 
-            // using scroll view
-            /*for (OfficialOverview officialOverview : overviewList) {
-                scrollData.addView(getDefaultTextView(officialOverview.getDisplayName(),
-                                                      officialOverview.getId()));
-            }*/
         }));
     }
 

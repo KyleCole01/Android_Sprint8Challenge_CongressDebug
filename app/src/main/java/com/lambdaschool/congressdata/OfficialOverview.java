@@ -28,14 +28,16 @@ public class OfficialOverview {
         this.id = congresspersonOverview.getId();
     }
 
-    private String buildDisplayName() {
+    public String buildDisplayName() {
         StringBuilder nameBuilder = new StringBuilder();
-        nameBuilder.append(firstName);
+        // needed another append for the space between names
+        nameBuilder.append(firstName).append(" ");
         if (!middleName.equals("null")) {
             nameBuilder.append(middleName).append(" ");
         }
         nameBuilder.append(lastName);
-        return nameBuilder.toString().toLowerCase();
+        //removed .toLowerCase();
+        return nameBuilder.toString();
     }
 
     public String getDisplayName() {

@@ -80,19 +80,19 @@ public class CongresspersonProfile {
 
     public CongresspersonProfile(CongresspersonDetails congresspersonDetails) {
 
-            this(congresspersonDetails.getFirstName(),
-                    congresspersonDetails.getMiddleName(),
-                    congresspersonDetails.getLastName(),
-                    congresspersonDetails.getCurrentParty(),
-                    congresspersonDetails.getRoles().get(0).getState(),
-                    congresspersonDetails.getMemberId(),
-                    congresspersonDetails.getTwitterAccount(),
-                    congresspersonDetails.getFacebookAccount(),
-                    congresspersonDetails.getRoles().get(0).getDistrict(),
-                    congresspersonDetails.getRoles().get(0).getPhone(),
-                    Double.toString(congresspersonDetails.getRoles().get(0).getMissedVotesPct()),
-                    congresspersonDetails.getRoles().get(0).getOffice(),
-                    Double.toString(congresspersonDetails.getRoles().get(0).getVotesWithPartyPct()));
+        this(congresspersonDetails.getFirstName(),
+                congresspersonDetails.getMiddleName(),
+                congresspersonDetails.getLastName(),
+                congresspersonDetails.getCurrentParty(),
+                congresspersonDetails.getRoles().get(0).getState(),
+                congresspersonDetails.getMemberId(),
+                congresspersonDetails.getTwitterAccount(),
+                congresspersonDetails.getFacebookAccount(),
+                congresspersonDetails.getRoles().get(0).getDistrict(),
+                congresspersonDetails.getRoles().get(0).getPhone(),
+                Double.toString(congresspersonDetails.getRoles().get(0).getMissedVotesPct()),
+                congresspersonDetails.getRoles().get(0).getOffice(),
+                Double.toString(congresspersonDetails.getRoles().get(0).getVotesWithPartyPct()));
 
         //get correct role index
         int index = 0;
