@@ -26,8 +26,8 @@ public class CongresspersonProfile {
     private ArrayList<String> committees, subcommittees;
     private Bitmap image;
 
-    public CongresspersonProfile() {
-    }
+//    public CongresspersonProfile() {
+//    }
 
     /**
      * This is a constructor
@@ -109,7 +109,7 @@ public class CongresspersonProfile {
         this.setSubcommittees(subcommittees);
     }
 
-    private String buildDisplayName() {
+    public String buildDisplayName() {
         StringBuilder nameBuilder = new StringBuilder();
         nameBuilder.append(firstName).append(" ");
         if (!middleName.equals("null")) {
@@ -120,7 +120,6 @@ public class CongresspersonProfile {
     }
 
     public float getPrimaryProgress() {
-        // primary progress has been arbitrarily chosen to be red
         if(this.party.equals(REPUBLICAN)) {
             return this.votesWithPartyPct;
         } else {
@@ -129,7 +128,6 @@ public class CongresspersonProfile {
     }
 
     public float getSecondaryProgress() {
-        // secondary progress has been arbitrarily chosen to be blue
         if(this.party.equals(DEMOCRAT)) {
             return this.votesWithPartyPct;
         } else {
@@ -141,9 +139,9 @@ public class CongresspersonProfile {
         return committees;
     }
 
-    public void setCommittees(JSONArray committeesJson) {
-        this.committees = parseJsonList(committeesJson, COMMITTEE_DETAIL_TARGET);
-    }
+//    public void setCommittees(JSONArray committeesJson) {
+//        this.committees = parseJsonList(committeesJson, COMMITTEE_DETAIL_TARGET);
+//    }
 
     public void setCommittees(List<Committee> committees) {
         this.committees = new ArrayList<>();
@@ -156,9 +154,9 @@ public class CongresspersonProfile {
         return subcommittees;
     }
 
-    public void setSubcommittees(JSONArray subcommitteesJson) {
-        this.subcommittees = this.committees = parseJsonList(subcommitteesJson, COMMITTEE_DETAIL_TARGET);;
-    }
+//    public void setSubcommittees(JSONArray subcommitteesJson) {
+//        this.subcommittees = this.committees = parseJsonList(subcommitteesJson, COMMITTEE_DETAIL_TARGET);;
+//    }
 
     public void setSubcommittees(List<Subcommittee> subcommittees) {
         this.subcommittees = new ArrayList<>();
@@ -167,19 +165,19 @@ public class CongresspersonProfile {
         }
     }
 
-    private ArrayList<String> parseJsonList(JSONArray array, String target) {
-        ArrayList<String> result = new ArrayList<>();
-
-        for(int i = 0; i < array.length(); ++i) {
-            try {
-                result.add(array.getJSONObject(i).getString(target));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return result;
-    }
+//    private ArrayList<String> parseJsonList(JSONArray array, String target) {
+//        ArrayList<String> result = new ArrayList<>();
+//
+//        for(int i = 0; i < array.length(); ++i) {
+//            try {
+//                result.add(array.getJSONObject(i).getString(target));
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//        }
+//
+//        return result;
+//    }
 
     public String getOffice() {
         return office;
@@ -197,9 +195,9 @@ public class CongresspersonProfile {
         return party;
     }
 
-    public String getState() {
-        return state;
-    }
+//    public String getState() {
+//        return state;
+//    }
 
     public String getId() {
         return id;
@@ -213,21 +211,21 @@ public class CongresspersonProfile {
         return facebookAccount;
     }
 
-    public String getDistrict() {
-        return district;
-    }
+//    public String getDistrict() {
+//        return district;
+//    }
 
     public String getPhone() {
         return phone;
     }
 
-    public float getMissedVotesPct() {
-        return missedVotesPct;
-    }
+//    public float getMissedVotesPct() {
+//        return missedVotesPct;
+//    }
 
-    public Bitmap getImage() {
-        return image;
-    }
+//    public Bitmap getImage() {
+//        return image;
+//    }
 
     public void setImage(Bitmap image) {
         this.image = image;

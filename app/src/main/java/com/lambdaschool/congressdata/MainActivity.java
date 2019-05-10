@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView layoutList;
     private RecyclerView.LayoutManager layoutManager;
     private OverviewListAdapter listAdapter;
-
     private Context context;
     private CongresspersonListViewModel viewModel;
     private Activity activity;
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         viewModel = ViewModelProviders.of(this).get(CongresspersonListViewModel.class);
-
         viewModel.getOverviewList().observe(this, overviewList -> runOnUiThread(() -> {
             assert overviewList != null;
 

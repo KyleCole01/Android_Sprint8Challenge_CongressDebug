@@ -22,7 +22,6 @@ public class DetailsActivity extends AppCompatActivity {
 
     public static final String DETAILS_INTENT_TAG = "id";
     private Context context;
-
     private ImageView profileImage;
     private TextView profileName;
     private TextView profileParty;
@@ -68,7 +67,7 @@ public class DetailsActivity extends AppCompatActivity {
         profileSubcommitteeList = findViewById(R.id.profile_subcommittee_list);
 
 
-        ((TextView) findViewById(R.id.profile_name)).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.profile_name).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 themeUtils.nextTheme(activity);
@@ -85,7 +84,7 @@ public class DetailsActivity extends AppCompatActivity {
         viewModel.getProfile().observe(this, profile -> runOnUiThread(() -> {
             assert profile != null;
 //            profileImage.setImageBitmap(profile.getImage());
-            //TODO comment out line above and do this instead to download photos as needed rather beforehand.
+            //TODO commented out line above and do this instead to download photos as needed rather than beforehand.
             profileImage.setImageBitmap(CongressDao.getImage(profile.getId()));
             profileName.setText(profile.getDisplayName());
             profileParty.setText(profile.getParty());
@@ -94,8 +93,6 @@ public class DetailsActivity extends AppCompatActivity {
             profileFacebook.setText(Html.fromHtml("<a href=\"https://www.facebook.com/" + profile.getFacebookAccount() + "/\">Facebook</a>"));
             profileMap.setText(Html.fromHtml("<a href=\"https://www.google.com/maps/search/" + profile.getOffice().replace(" ", "-") + "\">Office</a>"));
             profilePhone.setText(profile.getPhone());
-
-
             profileVotingBar.setProgress((int) profile.getPrimaryProgress());
             profileVotingBar.setSecondaryProgress((int) profile.getSecondaryProgress());
 
@@ -133,7 +130,7 @@ public class DetailsActivity extends AppCompatActivity {
             });
         }));
     }
-
+// removed all unneeded and commented out code from here.
 
     private TextView getDefaultTextView(String text) {
         TextView dataView = new TextView(context);

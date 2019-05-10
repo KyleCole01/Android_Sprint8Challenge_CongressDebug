@@ -13,7 +13,7 @@ public class ProfileRepository {
 
         CongresspersonProfile profile = new CongresspersonProfile(CongressDao.getMemberDetails(id));
         //commented out for performance improvement
-        profile.setImage(CongressDao.getImage(profile.getId()));
+//        profile.setImage(CongressDao.getImage(profile.getId()));
         profileLiveData.setValue(profile);
 
         return profileLiveData;

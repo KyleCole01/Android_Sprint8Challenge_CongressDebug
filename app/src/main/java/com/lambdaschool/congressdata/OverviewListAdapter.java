@@ -18,7 +18,6 @@ public class OverviewListAdapter extends RecyclerView.Adapter<OverviewListAdapte
         public TextView textListParty;
         public TextView textListState;
         public ViewGroup cardParent;
-
         public ViewHolder(View view) {
             super(view);
 
@@ -50,7 +49,6 @@ public class OverviewListAdapter extends RecyclerView.Adapter<OverviewListAdapte
         holder.textListName.setText(data.getDisplayName());
         holder.textListParty.setText(data.getParty());
         holder.textListState.setText(data.getState());
-
         holder.cardParent.setTag(data.getId());
         holder.cardParent.setOnClickListener(new View.OnClickListener() {
             @Override

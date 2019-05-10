@@ -47,51 +47,28 @@ public class DetailsActivityTest {
 
     @Test
     public void shouldShowDisplayName() {
-        //setup
-
-        //execute
-
-        //check
         onView(withId(R.id.profile_name)).check(matches(withText(profile.getDisplayName())));
     }
 
     @Test
     public void shouldShowDisplayParty() {
-        //setup
-
-        //execute
-
-        //check
         onView(withId(R.id.profile_party)).check(matches(withText(profile.getParty())));
     }
 
     @Test
     public void shouldDisplayDistrict() {
-        //setup
-
-        //execute
-
-        //check
         onView(withId(R.id.profile_district)).check(matches(withText(profile.getLocation())));
     }
 
     @Test
     public void shouldShowDisplayTwitter() {
-        //setup
-
-        //execute
-        String expected = Html.fromHtml("<a href=\"https://twitter.com/" + profile.getTwitterAccount() + "\">Twitter</a>").toString();
-        //check
+       String expected = Html.fromHtml("<a href=\"https://twitter.com/" + profile.getTwitterAccount() + "\">Twitter</a>").toString();
         onView(withId(R.id.profile_twitter)).check(matches(withText(expected)));
     }
 
     @Test
     public void shouldShowDisplayFacebook() {
-        //setup
-
-        //execute
         String expected = Html.fromHtml("<a href=\"https://www.facebook.com/" + profile.getFacebookAccount() + "/\">Facebook</a>").toString();
-        //check
         onView(withId(R.id.profile_facebook)).check(matches(withText(expected)));
     }
 
