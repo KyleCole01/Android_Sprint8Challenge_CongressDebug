@@ -39,10 +39,13 @@ The requirements for this project are as follows:
 After you finish with these requirements, spend the rest of the time improving coverage on your unit tests, improving the UI tests and improving overall performance.
 
 
-Issues Found:
+Issues Found/ things done to improve:
 1. removed .toLowerCase() method in OfficialOverview to make the display name display properly.
 2. (performance improvement) commented out the line in the repo that pulled all pics and made it download the picture in the details activity when you click the person to smooth out the user experience. (was spiking alot with the pulling of all congresspeople at once)
 3. added a space between names in the build display name in official overview.
 4. removed the 2nd onCreate
 5. misc cleanup of unused code as well as cleaning extra whitespace .
+6. made buildDisplayName() method public for use in testing.
+7. removed un used methods and constructors
+8. created different congresspersonProfile constructor for use in testing environment.
 
